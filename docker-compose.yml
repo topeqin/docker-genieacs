@@ -10,6 +10,8 @@ services:
         environment:
             - MONGO_DATA_DIR=/data/db
             - MONGO_LOG_DIR=/var/log/mongodb
+        ports: 
+            - "27017:27017"
         volumes:
             - data_db:/data/db
             - data_configdb:/data/configdb
