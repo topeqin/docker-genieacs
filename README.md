@@ -33,11 +33,11 @@ cd $HOME/dockerproj && git clone https://github.com/DrumSergio/GenieACS-Docker &
 ### Pull/Build Dockerfile
 
 ```bash
-docker pull drumsergio/genieacs:1.2.0
+docker pull topeqin/genieacs:1.2.0
 ```
 or:
 ```bash
-docker build -f GenieACS.dockerfile . -t drumsergio/genieacs:1.2.0
+docker build -f Dockerfile_GenieACS -t topeqin/genieacs:1.2.0 .
 ```
 
 If you want to build the dockerfile, do not change its name (tag). If you wish to modify it, change docker-compose.yml accordingly.
