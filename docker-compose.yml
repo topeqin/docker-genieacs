@@ -20,14 +20,14 @@ services:
         networks:
             - gnetwork
 
-# Dockerfile here: https://github.com/topeqin/docker/genieacs
+# Dockerfile here: https://github.com/topeqin/docker/genieacs. Using image from hub or build from dockerfile
     genieacs:
         depends_on:
             - 'mongo'
-        #image: topeqin/genieacs:1.2.0
-        build:
-           context: ./
-           dockerfile: Dockerfile_GenieACS
+        image: topeqin/genieacs:1.2.0
+        #build:
+        #   context: ./
+        #   dockerfile: Dockerfile_GenieACS
         restart: always
         container_name: "genieacs"
         environment:
@@ -57,6 +57,22 @@ services:
         container_name: "genieacs-sim"
         networks:
             - gnetwork
+
+# Dockerfile here: https://github.com/topeqin/docker/genieacs
+    dhcpd:
+        image: networkboot/dhcpd
+        restart: always
+        container_name: "dhcpd"
+        network_mode: "host"
+        environment:
+            - DHCPD_PROTOCOL=4
+        volumes:
+            - ./data:/data
+        command: " enp0s3"
+        #networks:
+        #   host:
+        #      name: host
+        #      external: true
 
 volumes:
     data_db:
