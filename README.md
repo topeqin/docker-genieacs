@@ -26,8 +26,8 @@ systemctl enable docker
 curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-mkdir -p $HOME/dockerproj
-cd $HOME/dockerproj && git clone https://github.com/DrumSergio/GenieACS-Docker && cd GenieACS-Docker
+mkdir -p $HOME/docker_proj
+cd $HOME/docker_proj && git clone https://github.com/DrumSergio/GenieACS-Docker && cd GenieACS-Docker
 ```
 
 ### Pull/Build Dockerfile
@@ -57,6 +57,7 @@ Login into the container via the command `docker exec -it genieacs /bin/bash`.
 GenieACS UI will be available at port `3000`. You will see a wizard where you can configure GenieACS according to your needs.
 
 ### ToDo
-### Dibbler Server
-### PPP Server
+# 1. IPv6 Dibbler Server
+# 2. PPPoE Server
+# 3. DHCP Server
 
